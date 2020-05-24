@@ -23,7 +23,7 @@ class InsertDNSPrefetch implements MiddlewareInterface {
     {
         $response = $handler->handle($request);
         $body = $response->getBody()->getContents();
-        preg_match_all('#\bhttps?://[^\s()<>]+(?:\([\w\d]+\)|([^[:punct:]\s]|/))#', $body, $matches, PREG_OFFSET_CAPTURE);
+        preg_match_all('#\bhttps?://[^\s()<>]+(?:\([\w]+\)|([^[:punct:]\s]|/))#', $body, $matches, PREG_OFFSET_CAPTURE);
 
         $dnsPrefetch = collect($matches[0])->map(function ($item) {
             $replace = [
