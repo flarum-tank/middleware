@@ -1,0 +1,38 @@
+{
+  "name": "tank/middleware",
+  "description": "Additional useful middleware for Flarum",
+  "keywords": [
+    "flarum",
+    "middleware"
+  ],
+  "type": "flarum-extension",
+  "license": "MIT",
+  "require": {
+    "flarum/core": ">=0.1.0-beta.12 <0.1.0-beta.14"
+  },
+  "authors": [
+    {
+      "name": "Matthew Kilgore",
+      "email": "matthew@kilgore.dev",
+      "role": "Developer"
+    }
+  ],
+  "autoload": {
+    "psr-4": {
+      "Tank\\Middleware\\": "src/"
+    }
+  },
+  "extra": {
+    "flarum-extension": {
+      "title": "Middleware",
+      "icon": {
+        "name": "fas fa-arrow-alt-circle-up",
+        "backgroundColor": "",
+        "color": ""
+      }
+    },
+    "flagrow": {
+      "discuss": ""
+    }
+  }
+}
