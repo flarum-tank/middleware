@@ -42,8 +42,8 @@ class InsertDNSPrefetch implements MiddlewareInterface {
             '#<head>(.*?)#' => "<head>\n{$dnsPrefetch}"
         ];
         $newBody = preg_replace(array_keys($replace), array_values($replace), $body);
-        $response->getBody()->rewind();
-        $response->getBody()->write($newBody);
+        $response = $response->getBody()->rewind();
+        $response = $response->getBody()->write($newBody);
         return $response;
     }
 }
